@@ -36,7 +36,7 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Validators
 
         private void validateIsNumeric()
         {
-            if (Regex.IsMatch(this.value, @"^\d+$"))
+            if (!Regex.IsMatch(this.value, @"^\d+$"))
             {
                 string msg = $"{this.paramterName} must be Numeric";
 
