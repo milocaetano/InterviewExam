@@ -47,5 +47,19 @@ namespace Tallertechnologies.InterviewExam.Test.LibTests.Src.Utils
             //ASSERT
             Assert.Throws<CalculatorException>(() => calculator.SumWithReverse(num1, num2));
         }
+
+        [Test]
+        [TestCase("adsf", "adfsf")]
+        [TestCase("adfsdf", "1234")]
+        [TestCase("1234", "1111a")]
+
+        public void Should_Throw_Calculator_Exception_When_Paramter_is_Not_Numeric(string num1, string num2)
+        {
+            //ARRANGE
+            Calculator calculator = new Calculator();
+
+            //ASSERT
+            Assert.Throws<CalculatorException>(() => calculator.SumWithReverse(num1, num2));
+        }
     }
 }
