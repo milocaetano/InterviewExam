@@ -1,3 +1,4 @@
+
 SELECT
   (Firstname + ' ' + LastName) as Fullname,
   age,
@@ -8,3 +9,4 @@ FROM
   Customers person
   INNER JOIN Orders o on person.PersonID = o.PersonID
   INNER JOIN OrderDetails od on o.OrderID = od.OrderId
+WHERE od.ProductId = 1112222333

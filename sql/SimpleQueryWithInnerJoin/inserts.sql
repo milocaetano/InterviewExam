@@ -28,9 +28,12 @@ INSERT INTO [dbo].[OrderDetails]
            ([PersonID]
            ,[OrderId]
            ,[ProductNumber]
-           ,[ProductOrigin])
+           ,[ProductOrigin]
+           ,[ProductID])
      VALUES
            (1
            ,1
            ,99
-           ,'WEB')
+           ,'WEB'
+           ,1112222333
+           )
