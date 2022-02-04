@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Tallertechnologies.InterviewExam.Lib.Src.Utils.Helpers;
 using Tallertechnologies.InterviewExam.Lib.Src.Exceptions;
+using Tallertechnologies.InterviewExam.Lib.Src.Validators;
 
 namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
 {
@@ -16,9 +17,9 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
         }
         public string SumWithReverse(string number, string numberToBeReversed)
         {
-            validateNumber(number, "First Number");
-            validateNumber(numberToBeReversed, "SecondNumber");
-
+            new NumberValidator(number, "First Number").Validate();
+            new NumberValidator(numberToBeReversed, "Second Number").Validate();
+       
             int maxSixe = (number.Length > numberToBeReversed.Length ? number.Length : numberToBeReversed.Length) + 1;
             int[] result = new int[maxSixe];
             int[] numberArray = NumberHelper.ConvertNumberToArray(number);
@@ -47,16 +48,6 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
 
             string resultFormatted = String.Join("", result).TrimStart('0');
             return resultFormatted.Length > 0 ? resultFormatted : "0";
-        }
-
-        protected void validateNumber(string number, string parameterName = "Parameter")
-        {
-            if (String.IsNullOrEmpty(number))
-            {
-                string msg = $"{parameterName} cannot be Null of Empty";
-
-                throw new CalculatorException(msg);
-            }
         }
     }
 }
