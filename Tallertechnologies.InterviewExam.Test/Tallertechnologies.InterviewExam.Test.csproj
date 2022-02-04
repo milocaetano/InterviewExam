@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tallertechnologies.InterviewExam.Lib\Tallertechnologies.InterviewExam.Lib.csproj" />
+  </ItemGroup>
+
 </Project>

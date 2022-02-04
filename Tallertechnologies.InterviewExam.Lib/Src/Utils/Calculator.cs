@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Tallertechnologies.InterviewExam.Lib.Src.Utils.Helpers;
+using Tallertechnologies.InterviewExam.Lib.Src.Exceptions;
 
 namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
 {
@@ -13,7 +14,6 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
             string result = this.SumWithReverse(number.ToString(), numberToBeReversed.ToString());
             return Convert.ToInt32(result);
         }
-
         public string SumWithReverse(string number, string numberToBeReversed)
         {
             if (String.IsNullOrEmpty(number) || String.IsNullOrEmpty(numberToBeReversed))
@@ -51,9 +51,14 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
             return resultFormatted.Length > 0 ? resultFormatted : "0";
         }
 
-        protected void validateNumber(string number, string nameNumber)
+        protected void validateNumber(string number, string paramterName = "paramter")
         {
+            if (String.IsNullOrEmpty(number))
+            {
+                string msg = $"{paramterName} cannot be Null of Empty";
 
+                throw new CalculatorException(msg);
+            }
         }
     }
 }

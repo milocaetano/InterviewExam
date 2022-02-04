@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Tallertechnologies.InterviewExam.Lib.Src.Exceptions
 {
-    class CalculatorException
+    public class CalculatorException : Exception
     {
+        public CalculatorException(string msg) : base(msg)
+        {
+        }
     }
 }
