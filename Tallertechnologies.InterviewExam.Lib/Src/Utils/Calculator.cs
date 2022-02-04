@@ -16,10 +16,8 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
         }
         public string SumWithReverse(string number, string numberToBeReversed)
         {
-            if (String.IsNullOrEmpty(number) || String.IsNullOrEmpty(numberToBeReversed))
-            {
-                throw new Exception("Number can't be null or Empty");
-            }
+            validateNumber(number, "First Number");
+            validateNumber(numberToBeReversed, "SecondNumber");
 
             int maxSixe = (number.Length > numberToBeReversed.Length ? number.Length : numberToBeReversed.Length) + 1;
             int[] result = new int[maxSixe];
@@ -51,11 +49,11 @@ namespace Tallertechnologies.InterviewExam.Lib.Src.Utils
             return resultFormatted.Length > 0 ? resultFormatted : "0";
         }
 
-        protected void validateNumber(string number, string paramterName = "paramter")
+        protected void validateNumber(string number, string parameterName = "Parameter")
         {
             if (String.IsNullOrEmpty(number))
             {
-                string msg = $"{paramterName} cannot be Null of Empty";
+                string msg = $"{parameterName} cannot be Null of Empty";
 
                 throw new CalculatorException(msg);
             }
