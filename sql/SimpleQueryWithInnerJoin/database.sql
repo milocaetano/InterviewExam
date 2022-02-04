@@ -31,13 +31,14 @@ GO
 SET
   QUOTED_IDENTIFIER ON
 GO
-  CREATE TABLE [dbo].[OrderDetails](
-    [OrderDetailID] [int] IDENTITY(1, 1) NOT NULL,
-    [PersonID] [int] NOT NULL,
-    [OrderId] [int] NOT NULL,
-    [ProductNumber] [int] NOT NULL,
-    [ProductOrigin] [nchar](30) NOT NULL
-  ) ON [PRIMARY]
+CREATE TABLE [dbo].[OrderDetails](
+	[OrderDetailID] [int] IDENTITY(1,1) NOT NULL,
+	[PersonID] [int] NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[ProductNumber] [int] NOT NULL,
+	[ProductOrigin] [nchar](30) NOT NULL,
+	[ProductID] [int] NULL
+) ON [PRIMARY]
 GO
   /****** Object:  Table [dbo].[Orders]    Script Date: 04/02/2022 16:48:20 ******/
 SET
